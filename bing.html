@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bing 搜索与书签</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 50px;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* Bing Logo 样式 */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .logo-text {
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo-b { color: #EA4335; }
+        .logo-i { color: #FBBC05; }
+        .logo-n { color: #34A853; }
+        .logo-g { color: #4285F4; }
+
+        /* 搜索框容器 */
+        .search-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 15px;
+        }
+
+        .search-input {
+            width: 80%;
+            max-width: 600px;
+            height: 50px;
+            padding: 0 20px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            font-size: 18px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: #4285F4;
+        }
+
+        .search-button {
+            width: 120px;
+            height: 50px;
+            background-color: #F5F5F5;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #E0E0E0;
+            border-color: #bbb;
+        }
+
+        /* 书签栏容器 */
+        .bookmarks-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            border-top: 2px dashed #ccc;
+            padding-top: 30px;
+        }
+
+        /* 单个书签样式（方块 + 文字） */
+        .bookmark-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #555;
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            background-color: #f7f7f7;
+            border: 1px solid #eee;
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+        }
+
+        .bookmark-item:hover {
+            transform: translateY(-5px);
+            background-color: #f0f0f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .bookmark-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            .logo-text {
+                font-size: 36px;
+            }
+            
+            .search-input, .search-button {
+                height: 45px;
+                font-size: 16px;
+            }
+            
+            .bookmarks-container {
+                gap: 15px;
+            }
+
+            .bookmark-item {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <div class="logo-text">
+                <span class="logo-b">b</span><span class="logo-i">i</span><span class="logo-n">n</span><span class="logo-g">g</span>
+            </div>
+        </div>
+
+        <!-- 搜索框 -->
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="请输入搜索内容...">
+            <button class="search-button">搜索</button>
+        </div>
+
+        <!-- 书签栏（方块样式） -->
+        <div class="bookmarks-container">
+            <a href="https://www.kuaishou.com" target="_blank" class="bookmark-item">
+                <span class="bookmark-label">快手</span>
+            </a>
+
+            <a href="https://www.bilibili.com" target="_blank" class="bookmark-item">
+                <span class="bookmark-label">哔哩哔哩</span>
+            </a>
+
+            <a href="https://www.douyin.com" target="_blank" class="bookmark-item">
+                <span class="bookmark-label">抖音</span>
+            </a>
+
+            <a href="https://www.bing.com" target="_blank" class="bookmark-item">
+                <span class="bookmark-label">Bing</span>
+            </a>
+
+            <a href="https://www.doubao.com" target="_blank" class="bookmark-item">
+                <span class="bookmark-label">豆包</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
